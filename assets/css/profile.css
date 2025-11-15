@@ -1,0 +1,1053 @@
+	/**
+ * Alumni Profile Page Styles
+ */
+
+/* Theme Container Overrides */
+/* Override Astra theme and other theme containers */
+body:has(.alumnus-profile-wrapper) .ast-container,
+body:has(.alumnus-profile-wrapper) .container,
+body:has(.alumnus-profile-wrapper) .site-content,
+body:has(.alumnus-profile-wrapper) .entry-content {
+	max-width: 100% !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	margin: 0 !important;
+}
+
+/* Full-width only for header and wrapper background, not content */
+.alumnus-profile-wrapper {
+	width: 100% !important;
+	max-width: 100% !important;
+}
+
+.alumnus-profile-header,
+.alumnus-header-bar {
+	margin-left: calc(-50vw + 50%) !important;
+	margin-right: calc(-50vw + 50%) !important;
+	width: 100vw !important;
+	max-width: 100vw !important;
+}
+
+/* Reset and Base */
+.alumnus-profile-wrapper * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Base wrapper */
+.alumnus-profile-wrapper {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+	background: var(--alumnus-bg-page);
+	color: var(--alumnus-text-body);
+	min-height: 100vh;
+}
+
+/* Header with Gradient */
+.alumnus-profile-header {
+	background: var(--alumnus-primary);
+	padding: 30px 20px 30px;
+	position: relative;
+}
+
+/* Increased padding when there's no navigation (visiting another user's profile) */
+.alumnus-profile-header:not(:has(.aph-nav)) {
+	padding: 50px 20px 50px;
+}
+
+.aph-gradient-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.1;
+	background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+.aph-nav {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+	position: relative;
+	z-index: 1;
+}
+
+.aph-nav-btn {
+	background: var(--alumnus-overlay-white-medium);
+	border: 2px solid var(--alumnus-secondary);
+	color: white;
+	padding: 10px 24px;
+	border-radius: 25px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 500;
+	backdrop-filter: blur(10px);
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* Reset button defaults for button elements */
+button.aph-nav-btn {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-family: inherit;
+	line-height: normal;
+}
+.aph-nav-btn:link,
+.aph-nav-btn:visited,
+.aph-nav-btn:hover,
+.aph-nav-btn:active,
+.aph-nav-btn:focus {
+	color: var(--alumnus-bg-white);
+	text-decoration: none;
+}
+.aph-nav .aph-nav-btn,
+.aph-nav .aph-nav-btn:link,
+.aph-nav .aph-nav-btn:visited,
+.aph-nav .aph-nav-btn:hover,
+.aph-nav .aph-nav-btn:active,
+.aph-nav .aph-nav-btn:focus {
+	color: var(--alumnus-bg-white) !important;
+	text-decoration: none !important;
+}
+.aph-nav-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--alumnus-overlay-white-focus);
+}
+
+.aph-nav-btn:hover {
+	background: var(--alumnus-overlay-white-hover);
+	border-color: var(--alumnus-overlay-white-hover-strong);
+	transform: translateY(-2px);
+}
+
+.alumnus-profile-container {
+	max-width: 1200px !important;
+	width: 100% !important;
+	margin: 0 auto !important;
+	padding: 0 20px 40px !important;
+}
+
+.alumnus-skills-container {
+	max-width: 1200px !important;
+	width: 100% !important;
+	margin: 0 auto !important;
+	padding: 20px 20px 0px !important;
+	margin-top: 90px !important;
+}
+
+/* Experience container mirrors skills container spacing */
+.alumnus-experience-container {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 20px 20px 40px !important;
+}
+
+.alumnus-profile-card {
+	background: white;
+	border-radius: 16px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 20px rgba(0, 0, 0, 0.05);
+	padding: 80px 40px 20px;
+	position: relative;
+	margin-top: -60px;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+/* Edit button positioned in top-right corner of profile card */
+.apc-edit-btn {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: transparent;
+	border: 2px solid var(--alumnus-border-medium);
+	color: var(--alumnus-text-body);
+	padding: 8px 12px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 14px;
+	transition: all 0.2s ease;
+	z-index: 10;
+}
+
+.apc-edit-btn:hover {
+	background: var(--alumnus-primary) !important;
+    border: 2px solid var(--alumnus-secondary) !important;
+	color: var(--alumnus-bg-white) !important;
+}
+
+/* removed button variants and icon styles for unified buttons */
+
+/* Profile Header */
+.apc-header {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid var(--alumnus-border-medium);
+}
+
+.apc-main-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 50px;
+	align-items: start;
+	width: 100%;
+}
+
+.apc-left-column {
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
+	align-self: start;
+	min-width: 0;
+}
+
+.apc-right-column {
+	display: flex;
+	flex-direction: column;
+	align-self: start;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.apc-avatar-wrapper {
+	position: absolute;
+	top: -70px;
+	left: 40px;
+}
+
+.apc-avatar {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	border: 5px solid var(--alumnus-secondary);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--alumnus-primary);
+}
+
+.apc-initials {
+	font-size: 48px;
+	font-weight: 700;
+	color: var(--alumnus-bg-white);
+}
+
+.apc-info {
+	min-width: 0;
+}
+
+.apc-bio-section {
+	margin-top: 0 !important;
+	min-width: 0;
+	max-width: 100%;
+}
+
+.apc-bio-section .apc-section-title {
+	font-size: 20px;
+	margin-bottom: 16px;
+	border-bottom: 2px solid var(--alumnus-secondary);
+}
+
+.apc-bio-section .apc-info-content {
+	width: 100%;
+	overflow-wrap: break-word;
+}
+
+.apc-name {
+	font-size: 32px;
+	font-weight: 700;
+	color: var(--alumnus-text-heading);
+	margin-bottom: 0px;
+}
+
+.apc-email {
+	font-size: 15px;
+	color: var(--alumnus-text-lighter);
+	margin-bottom: 12px;
+}
+
+.apc-subtitle {
+	font-size: 18px;
+	color: var(--alumnus-text-secondary);
+	margin-bottom: 8px;
+}
+
+.apc-contact {
+	font-size: 14px;
+	color: var(--alumnus-text-lighter);
+	margin-top: 8px;
+}
+
+/* Section Title */
+.apc-section-title {
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--alumnus-text-heading);
+	margin-bottom: 10px !important;
+	padding-bottom: 0px;
+	border-bottom: 2px solid var(--alumnus-secondary);
+	display: inline-block;
+}
+
+.apc-placeholder {
+	color: var(--alumnus-text-placeholder);
+	font-style: italic;
+	font-size: 14px;
+}
+
+/* Info Sections (Bio, Skills, etc.) */
+.apc-info-section {
+	margin-top: 40px;
+}
+
+.apc-info-content {
+	color: var(--alumnus-text-heading);
+	line-height: 1.5;
+	font-size: 15px;
+	word-wrap: break-word;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	max-width: 100%;
+}
+
+/* Skills Card (Separate from Profile Card) */
+.alumnus-skills-card {
+	background: white;
+	border-radius: 16px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 20px rgba(0, 0, 0, 0.05);
+	padding: 25px 40px 25px;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+/* Experience card */
+.alumnus-experience-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 25px 40px 25px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.alumnus-skills-card .apc-section-title {
+	margin-bottom: 15px !important;
+}
+
+.apc-skills-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.apc-skill-tag {
+	background: var(--alumnus-primary);
+	color: white;
+	padding: 8px 16px;
+	border-radius: 20px;
+	font-size: 14px;
+	font-weight: 500;
+	display: inline-block;
+	box-shadow: 0 2px 4px var(--alumnus-shadow-profile-skill);
+}
+
+.apc-skill-tag:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px var(--alumnus-shadow-profile-skill-hover);
+}
+
+/* Experience list */
+.apc-exp-list {
+	list-style: none;
+	margin: 0px !important;
+	padding-top: 0px !important;
+	padding-left: 0px !important;
+}
+
+.apc-exp-item {
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
+	padding: 10px 0;
+	border-bottom: 1px solid var(--alumnus-border-medium);
+}
+
+.apc-exp-item:last-child { border-bottom: none; }
+
+.apc-exp-title {
+	font-weight: 700;
+	font-size: 16px;
+	color: var(--alumnus-text-heading);
+}
+
+.apc-exp-company {
+	font-weight: 500;
+	font-size: 14px;
+	color: var(--alumnus-text-heading);
+}
+
+.apc-exp-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
+	color: var(--alumnus-text-lighter);
+	font-size: 14px;
+}
+
+.apc-exp-dates {
+	color: var(--alumnus-text-lighter);
+	font-size: 14px;
+}
+
+.apc-exp-skills {
+	margin-top: 4px;
+	color: var(--alumnus-text-secondary);
+	font-size: 14px;
+}
+
+.apc-exp-skills-label {
+	font-weight: 600;
+	color: var(--alumnus-text-heading);
+}
+
+/* Experience header row with add button */
+.apc-section-header-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.apc-add-btn {
+	background: transparent;
+	border: 2px solid var(--alumnus-border-medium);
+	color: var(--alumnus-text-body);
+	padding: 8px 12px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.apc-add-btn:hover {
+	background: var(--alumnus-primary) !important;
+    border: 2px solid var(--alumnus-secondary) !important;
+	color: var(--alumnus-bg-white) !important;
+}
+
+/* Experience row action buttons */
+.apc-exp-actions {
+	display: flex;
+	gap: 10px;
+	margin-top: 8px;
+}
+
+.apc-exp-action-btn {
+	background: transparent;
+	border: 2px solid var(--alumnus-border-medium);
+	color: var(--alumnus-text-body);
+	padding: 6px 10px;
+	border-radius: 6px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 13px;
+}
+
+.apc-exp-action-btn:hover { 
+	background: var(--alumnus-primary) !important;
+    border: 2px solid var(--alumnus-secondary) !important;
+	color: var(--alumnus-bg-white) !important;
+}
+
+.apc-exp-action-btn.apc-exp-delete { 
+	border-color: var(--alumnus-error-text, #c62828) !important; 
+	color: var(--alumnus-error-text, #c62828) !important; 
+}
+
+.apc-exp-action-btn.apc-exp-delete:hover { 
+	background: rgba(198,40,40,0.06) !important; 
+}
+
+/* Posts Section */
+.apc-posts-section {
+	margin-top: 40px;
+}
+
+.apc-post {
+	background: var(--alumnus-bg-page);
+	border: 1px solid var(--alumnus-border-medium);
+	border-radius: 12px;
+	padding: 24px;
+	margin-bottom: 16px;
+}
+
+.apc-post:hover {
+	box-shadow: 0 4px 12px var(--alumnus-shadow-md);
+	border-color: var(--alumnus-border-select);
+	transform: translateY(-2px);
+}
+
+.apc-post-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 12px;
+}
+
+.apc-post-title {
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--alumnus-text-heading);
+}
+
+.apc-post-time {
+	font-size: 13px;
+	color: var(--alumnus-text-placeholder);
+}
+
+.apc-post-content {
+	color: var(--alumnus-text-secondary);
+	line-height: 1.6;
+	margin-bottom: 16px;
+}
+
+.apc-post-actions {
+	display: flex;
+	gap: 20px;
+	padding-top: 16px;
+	border-top: 1px solid var(--alumnus-border-medium);
+}
+
+.apc-action-btn {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background: none;
+	border: none;
+	color: var(--alumnus-text-lighter);
+	font-size: 14px;
+	cursor: pointer;
+	padding: 8px 12px;
+	border-radius: 8px;
+	font-weight: 500;
+}
+
+.apc-action-btn:hover {
+	background: var(--alumnus-border-medium);
+	color: var(--alumnus-primary);
+}
+
+.apc-action-btn.liked {
+	color: var(--alumnus-primary);
+}
+
+.apc-action-icon {
+	font-size: 18px;
+}
+
+/* Empty State */
+.apc-empty-state {
+	text-align: center;
+	padding: 60px 20px;
+	color: var(--alumnus-text-very-light);
+}
+
+.apc-empty-icon {
+	font-size: 48px;
+	margin-bottom: 16px;
+	opacity: 0.5;
+}
+
+.apc-empty-text {
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.apc-empty-subtext {
+	font-size: 14px;
+	color: var(--alumnus-border-select);
+}
+
+/* Error State */
+.alumnus-profile-error {
+	max-width: 600px;
+	margin: 40px auto;
+	padding: 40px;
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+	text-align: center;
+}
+
+.alumnus-profile-error p {
+	color: var(--alumnus-error-text);
+	font-size: 16px;
+	font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.alumnus-profile-card {
+		padding: 80px 15px 15px;
+	}
+
+	.apc-main-content {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.apc-left-column,
+	.apc-right-column {
+		width: 100%;
+		gap: 0px !important;
+	}
+
+	/* Avatar */
+	.apc-avatar-wrapper {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	/* Header Section */
+	.apc-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin-bottom: 10px !important;
+		padding-bottom: 20px !important;
+	}
+
+	/* User Info Section */
+	.apc-info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.apc-name {
+		font-size: 32px;
+		font-weight: bold !important;
+		margin-bottom: 0px !important;
+	}
+
+	.apc-subtitle {
+		font-size: 15px;
+		margin-bottom: 0px !important;
+	}
+
+	.apc-name,
+	.apc-subtitle,
+	.apc-email,
+	.apc-contact {
+		width: 100%;
+	}
+
+	/* Bio Section */
+	.apc-bio-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.apc-bio-section .apc-section-title {
+		text-align: center;
+	}
+
+	.apc-bio-section .apc-info-content {
+		width: 100%;
+	}
+
+	/* Skills Card */
+	.alumnus-skills-card {
+		padding: 20px 20px;
+		text-align: center;
+	}
+
+	.alumnus-skills-card .apc-section-title {
+		text-align: center;
+	}
+
+	.apc-skills-list {
+		justify-content: center;
+	}
+
+	/* Navigation */
+	.aph-nav {
+		flex-wrap: wrap;
+		justify-content: right;
+	}
+
+	.aph-nav-btn {
+		font-size: 16px;
+	}
+
+	/* Posts */
+	.apc-post-header {
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.apc-post-actions {
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+}
+
+@media (max-width: 480px) {
+	.apc-post {
+		padding: 16px;
+	}
+
+	.apc-post-title {
+		font-size: 16px;
+	}
+
+	.apc-action-btn {
+		padding: 6px 10px;
+		font-size: 13px;
+	}
+}
+
+/* Modal Styles */
+
+/* 1. The Dark Background Overlay */
+.alumnus-modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	z-index: 10000;
+	
+	/* Center the modal card */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/* Start hidden */
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* Enable transitions only after first interaction */
+.alumnus-modal-overlay.alumnus-modal-ready {
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* 2. The Active State (when pop-up is visible) */
+.alumnus-modal-overlay.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.alumnus-modal-overlay.alumnus-modal-ready.active {
+	transition: opacity 0.3s ease, visibility 0s linear;
+}
+
+/* 3. The Modal Card */
+.alumnus-modal-card {
+	background: var(--alumnus-bg-white);
+	padding: 32px;
+	border-radius: 16px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+	width: 90%;
+	max-width: 600px;
+	max-height: 90vh;
+	overflow-y: auto;
+	position: relative;
+	
+	/* Start slightly scaled down */
+	transform: scale(0.95);
+	opacity: 0;
+}
+
+/* Enable card transitions only after first interaction */
+.alumnus-modal-overlay.alumnus-modal-ready .alumnus-modal-card {
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 4. Active state for the card */
+.alumnus-modal-overlay.active .alumnus-modal-card {
+	transform: scale(1);
+	opacity: 1;
+}
+
+/* 5. The Close Button */
+.alumnus-modal-close-btn {
+	position: absolute;
+	top: 16px;
+	right: 20px;
+	background: none;
+	border: none;
+	font-size: 32px;
+	font-weight: bold;
+	color: var(--alumnus-text-lighter);
+	cursor: pointer;
+	padding: 0;
+	line-height: 1;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color 0.2s ease;
+}
+
+.alumnus-modal-close-btn:hover {
+	color: var(--alumnus-text-heading);
+}
+
+/* Modal Header */
+.alumnus-modal-header {
+	font-size: 28px;
+	font-weight: 700;
+	color: var(--alumnus-text-heading);
+	margin-bottom: 24px;
+	padding-right: 40px;
+}
+
+/* Modal Body */
+.alumnus-modal-body {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* Modal Field */
+.alumnus-modal-field {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.alumnus-modal-label {
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--alumnus-text-heading);
+}
+
+.alumnus-modal-hint {
+	font-size: 13px;
+	color: var(--alumnus-text-light);
+	margin-top: 8px;
+	line-height: 1.4;
+}
+
+.alumnus-modal-input,
+.alumnus-modal-textarea {
+	width: 100% !important;
+	padding: 8px 12px !important;
+	border: 2px solid var(--alumnus-border-medium) !important;
+	border-radius: 8px !important;
+	font-size: 15px !important;
+	color: var(--alumnus-text-body) !important;
+	background: var(--alumnus-bg-white) !important;
+	font-family: inherit !important;
+	margin: 0 !important;
+}
+
+.alumnus-modal-input {
+	word-wrap: normal !important;
+	word-break: normal !important;
+	overflow-wrap: normal !important;
+}
+
+.alumnus-modal-input:focus,
+.alumnus-modal-textarea:focus {
+	outline: none !important;
+	border-color: var(--alumnus-primary) !important;
+	box-shadow: 0 0 0 3px var(--alumnus-overlay-white-focus) !important;
+}
+
+.alumnus-modal-textarea {
+	resize: vertical !important;
+	min-height: 100px !important;
+	white-space: pre-wrap !important;
+	word-wrap: break-word !important;
+	overflow-wrap: break-word !important;
+}
+
+#alumnus-skills-modal-input {
+	height: 120px !important;
+	resize: none !important;
+}
+
+/* Character Counter */
+.alumnus-char-counter {
+	font-size: 13px;
+	color: var(--alumnus-text-lighter);
+	text-align: right;
+	margin-top: 4px;
+	font-weight: 500;
+}
+
+.alumnus-char-counter span {
+	color: var(--alumnus-text-heading);
+	font-weight: 600;
+}
+
+/* Modal Footer */
+.alumnus-modal-footer {
+	display: flex;
+	gap: 12px;
+	justify-content: flex-end;
+	padding-top: 24px;
+}
+
+.alumnus-modal-btn-save,
+.alumnus-modal-btn-cancel {
+	padding: 12px 24px;
+	border-radius: 8px;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.alumnus-modal-btn-save {
+	background: var(--alumnus-primary);
+	color: white;
+	border: 2px solid var(--alumnus-primary);
+}
+
+.alumnus-modal-btn-save:hover:not(:disabled) {
+	background: var(--alumnus-primary-dark, var(--alumnus-primary));
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.alumnus-modal-btn-save:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.alumnus-modal-btn-cancel {
+	background: transparent;
+	color: var(--alumnus-text-body);
+	border: 2px solid var(--alumnus-border-medium);
+}
+
+.alumnus-modal-btn-cancel:hover {
+	background: var(--alumnus-text-body);
+	border-color: var(--alumnus-text-lighter);
+}
+
+/* Responsive Modal Styles */
+@media (max-width: 768px) {
+	.alumnus-modal-card {
+		padding: 24px;
+		width: 95%;
+		max-height: 95vh;
+	}
+
+	.alumnus-modal-header {
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+
+	.alumnus-modal-footer {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.alumnus-modal-btn-save,
+	.alumnus-modal-btn-cancel {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.alumnus-modal-card {
+		padding: 20px;
+	}
+
+	.alumnus-modal-header {
+		font-size: 20px;
+	}
+
+	.alumnus-modal-close-btn {
+		font-size: 28px;
+		top: 12px;
+		right: 16px;
+	}
+}
+
+/* ===========================
+   Skill Autocomplete Dropdown
+   =========================== */
+
+/* Wrap textarea in a container for relative positioning */
+#alumnus-skills-modal-input {
+	position: relative;
+}
+
+.skill-autocomplete-dropdown {
+	position: relative;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: #ffffff;
+	border: 2px solid var(--alumnus-border-medium);
+	border-top: none;
+	border-radius: 0 0 8px 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	max-height: 200px;
+	overflow-y: auto;
+	z-index: 10001;
+	margin-top: -8px;
+	display: none;
+}
+
+.skill-autocomplete-item {
+	padding: 10px 15px;
+	cursor: pointer;
+	border-bottom: 1px solid #f0f0f0;
+	transition: background-color 0.2s ease;
+	color: var(--alumnus-text-body, #333);
+	font-size: 14px;
+}
+
+.skill-autocomplete-item:hover,
+.skill-autocomplete-item.active {
+	background-color: #f5f5f5;
+}
+
+.skill-autocomplete-item:last-child {
+	border-bottom: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+	.skill-autocomplete-dropdown {
+		max-height: 150px;
+		font-size: 16px; /* Prevent zoom on iOS */
+	}
+	
+	.skill-autocomplete-item {
+		padding: 12px 15px;
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.skill-autocomplete-dropdown {
+		max-height: 120px;
+	}
+}
+

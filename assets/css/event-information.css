@@ -1,13 +1,5 @@
 /* Event Information Template Styles (Improved) */
-:root{
-  --alumnus-accent:#06b365;
-  --alumnus-accent-dark:#049250;
-  --alumnus-teal:#00A6C7;
-  --alumnus-orange:#F37F3C;
-  --alumnus-green:#4CAF50;
-  --alumnus-surface:#ffffff;
-  --alumnus-muted:#6b7280;
-}
+/* Color variables moved to colors.css for centralized management */
 .alumnus-event-wrapper{
   --alumnus-gap:40px;
   display:grid;
@@ -26,36 +18,36 @@
 }
 
 .alumnus-event-left{text-align:center;}
-.alumnus-event-image-wrapper{width:300px;height:300px;border-radius:50%;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.12);margin:0 auto 22px;position:relative;background:var(--alumnus-surface);display:flex;align-items:center;justify-content:center;border:6px solid rgba(255,255,255,0.6);}
+.alumnus-event-image-wrapper{width:300px;height:300px;border-radius:50%;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.12);margin:0 auto 22px;position:relative;background:var(--alumnus-bg-white);display:flex;align-items:center;justify-content:center;border:6px solid var(--alumnus-overlay-white-light);}
 .alumnus-event-image{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1);transition:transform .4s ease;}
 .alumnus-event-image-wrapper:hover .alumnus-event-image{transform:scale(1.03);}
-.alumnus-event-image--placeholder{width:100%;height:100%;background:linear-gradient(180deg,#f4f6f8,#eef2f5);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--alumnus-muted);}
+.alumnus-event-image--placeholder{width:100%;height:100%;background:linear-gradient(180deg,var(--alumnus-bg-page),#eef2f5);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--alumnus-text-pale);}
 
-.alumnus-event-join{display:inline-flex;align-items:center;gap:10px;background:var(--alumnus-accent);color:#fff;text-decoration:none;padding:12px 28px;border-radius:999px;font-size:17px;font-weight:700;transition:all .18s ease;box-shadow:0 8px 20px rgba(6,179,101,0.18);}
+.alumnus-event-join{display:inline-flex;align-items:center;gap:10px;background:var(--alumnus-accent-green);color:var(--alumnus-text-on-dark);text-decoration:none;padding:12px 28px;border-radius:999px;font-size:17px;font-weight:700;transition:all .18s ease;box-shadow:0 8px 20px var(--alumnus-shadow-button-green);}
 .alumnus-event-join .alumnus-icon{font-size:18px}
-.alumnus-event-join:hover{background:var(--alumnus-accent-dark);transform:translateY(-2px);box-shadow:0 12px 26px rgba(6,179,101,0.22);}
+.alumnus-event-join:hover{background:var(--alumnus-accent-green-dark);transform:translateY(-2px);box-shadow:0 12px 26px var(--alumnus-shadow-button-green-hover);}
 
 .alumnus-event-right{border-left:3px solid rgba(17,17,17,0.85);padding-left:48px;}
-.alumnus-event-title{font-size:40px;margin:0 0 8px;font-weight:800;line-height:1.06;color:#0b1220;text-shadow:0 1px 0 rgba(255,255,255,0.02);}
-.alumnus-event-interested{margin:0 0 20px;font-size:15px;font-weight:600;color:var(--alumnus-muted);}
+.alumnus-event-title{font-size:40px;margin:0 0 8px;font-weight:800;line-height:1.06;color:var(--alumnus-text-heading);text-shadow:0 1px 0 var(--alumnus-overlay-white-subtle);}
+.alumnus-event-interested{margin:0 0 20px;font-size:15px;font-weight:600;color:var(--alumnus-text-pale);}
 
 .alumnus-event-meta{display:grid;grid-template-columns:140px 1fr;row-gap:16px;column-gap:18px;font-size:16px;align-items:center}
-.alumnus-event-meta-label{font-weight:800;color:#0b1220}
+.alumnus-event-meta-label{font-weight:800;color:var(--alumnus-text-heading)}
 .alumnus-event-meta-value{display:flex;align-items:center;gap:12px}
 
 .alumnus-event-description{margin-top:30px;}
-.alumnus-event-description-heading{font-size:30px;margin:0 0 12px;font-weight:800;color:#0b1220}
+.alumnus-event-description-heading{font-size:30px;margin:0 0 12px;font-weight:800;color:var(--alumnus-text-heading)}
 .alumnus-event-description-text{font-size:18px;line-height:1.6;color:#111;max-width:820px}
 
 .alumnus-event-readmore-wrap{margin-top:28px}
 .alumnus-event-readmore{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border:2px solid #111;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;color:#111;transition:.18s}
 .alumnus-event-readmore:hover{background:#111;color:#fff;transform:translateY(-2px)}
 
-.alumnus-badge{display:inline-block;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:800;color:#fff;line-height:1;text-transform:none;box-shadow:0 6px 18px rgba(4,4,4,0.06)}
+.alumnus-badge{display:inline-block;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:800;color:var(--alumnus-text-on-dark);line-height:1;text-transform:none;box-shadow:0 6px 18px rgba(4,4,4,0.06)}
 .alumnus-badge-green{background:var(--alumnus-green)}
 .alumnus-badge-orange{background:var(--alumnus-orange)}
 .alumnus-badge-teal{background:var(--alumnus-teal)}
-.alumnus-badge-default{background:#9CA3AF}
+.alumnus-badge-default{background:var(--alumnus-badge-default)}
 
 .alumnus-icon{font-size:18px;line-height:1}
 

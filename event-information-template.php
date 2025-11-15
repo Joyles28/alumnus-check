@@ -83,8 +83,19 @@ function alumnus_event_info_shortcode( $atts ) {
 	$event = get_post( $event_id );
 	$data  = alumnus_get_event_info( $event_id );
 
+	// Ensure color-variables.css is loaded
+	if ( ! wp_style_is( 'wordpress-plugin-template-colors', 'registered' ) ) {
+		wp_register_style(
+			'wordpress-plugin-template-colors',
+			plugin_dir_url( __FILE__ ) . 'assets/css/color-variables.css',
+			array(),
+			'1.0.0'
+		);
+	}
+	wp_enqueue_style( 'wordpress-plugin-template-colors' );
+
 	// Ensure stylesheet is loaded.
-	wp_enqueue_style( 'alumnus-event-info', plugin_dir_url( __FILE__ ) . 'assets/css/event-information.css', array(), '1.0.0' );
+	wp_enqueue_style( 'alumnus-event-info', plugin_dir_url( __FILE__ ) . 'assets/css/event-information.css', array( 'wordpress-plugin-template-colors' ), '1.0.0' );
 
 	$image_html = '';
 	if ( $data['image_id'] ) {

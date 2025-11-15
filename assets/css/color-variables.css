@@ -1,0 +1,229 @@
+/**
+ * Alumnus Plugin - Color Variables
+ * 
+ * Centralized color definitions for consistent theming across the plugin.
+ * All colors are defined as CSS custom properties (variables) for easy customization.
+ * 
+ * Usage: color: var(--alumnus-primary-blue);
+ */
+
+:root {
+	/* ============================================
+	   PRIMARY BRAND COLORS
+	   ============================================ */
+	
+	/* Primary brand color palette */
+	--alumnus-primary: #5a0616;        	/* Used in: community-feed (profile cards, buttons), directory (hero bg, labels, filters), login (logo text, checkboxes, button), profile (header gradient, section borders) */
+	--alumnus-secondary: #d8b847;   		/* Used in: directory (button active state) */
+	--alumnus-medium-blue: #064266;         /* Used in: community-feed (stats bg), directory (gradient) */
+	--alumnus-primary-hover: #450410;       /* Used in: hover states when using alumnus-primary color */
+	
+	/* Header Colors */
+	--alumnus-header-bg: var(--alumnus-primary);  /* Used in: header (background) - uses primary color #5a0616 (complementary color to primary color - #065A4A) */
+	
+	/* Event Background */
+	--alumnus-event-bg: #023D56;            /* Used in: event-list (grid background) */
+	
+	/* ============================================
+	   ACCENT COLORS
+	   ============================================ */
+	
+	/* Green Accents */
+	--alumnus-accent-green: #06b365;        /* Used in: events (join buttons, primary actions) */
+	--alumnus-accent-green-dark: #049250;   /* Used in: events (hover states) */
+	--alumnus-green: #4CAF50;               /* Used in: events (status badges) */
+	
+	/* Gold/Yellow Accents */
+	--alumnus-gold: #ffc94b;                /* Used in: community-feed (role badges, section titles, borders) */
+	--alumnus-gold-bright: #F4D03F;         /* Used in: login (home button icon, button text) */
+	--alumnus-gold-muted: #d8b847;          /* Used in: header (text, nav links) */
+	
+	/* Brown/Beige Accents (Login page) */
+	--alumnus-brown: #6B4423;               /* Used in: login (home button, text) */
+	--alumnus-beige: #D4C4B0;               /* Used in: login (home button gradient) */
+	
+	/* Orange & Teal (Events) */
+	--alumnus-orange: #F37F3C;              /* Used in: events (status badges) */
+	--alumnus-teal: #00A6C7;                /* Used in: events (status badges) */
+	
+	/* ============================================
+	   TEXT COLORS (Dark to Light)
+	   ============================================ */
+	
+	--alumnus-text-heading: #121212;        /* Used in: all headings, titles, labels, and primary dark text */
+	--alumnus-text-body: #2d3748;           /* Used in: profile (base text), login (labels) */
+	--alumnus-text-medium: #334e68;         /* Used in: community-feed (engagement stats) */
+	--alumnus-text-secondary: #4a5568;      /* Used in: profile (subtitle, info content) */
+	--alumnus-text-muted: #5A5A5A;          /* Used in: login (input text) */
+	--alumnus-text-slate: #5d6d7e;          /* Used in: community-feed (post date) */
+	--alumnus-text-lighter: #64748b;        /* Used in: directory, profile (email, action buttons) */
+	--alumnus-text-pale: #6b7280;           /* Used in: events (muted text) */
+	--alumnus-text-faint: #7a8a99;          /* Used in: community-feed (placeholder text) */
+	--alumnus-text-placeholder: #94a3b8;    /* Used in: directory, login, profile (placeholders) */
+	--alumnus-text-very-light: #a0aec0;     /* Used in: profile (empty state) */
+	
+	/* ============================================
+	   BACKGROUND COLORS
+	   ============================================ */
+	
+	/* White */
+	--alumnus-bg-white: #ffffff;            /* Used in: cards, panels, search box */
+	
+	/* Light backgrounds */
+	--alumnus-bg-page: #f5f7fa;             /* Used in: login, profile, directory, community-feed, events (all light backgrounds) */
+	
+	/* Colored backgrounds */
+	--alumnus-bg-input: #E8D5D5;            /* Used in: login (form inputs) */
+	--alumnus-bg-input-focus: #DCC5C5;      /* Used in: login (input focus state) */
+	
+	/* Placeholder backgrounds */
+	--alumnus-bg-placeholder: #f0f2f5;      /* Used in: community-feed (media placeholder) */
+	--alumnus-bg-placeholder-gradient-start: #dbe4ec;  /* Used in: community-feed (post placeholder) */
+	--alumnus-bg-placeholder-gradient-end: #f0f3f5;    /* Used in: community-feed (post placeholder) */
+	--alumnus-bg-event-placeholder-start: #e8edf2;     /* Used in: events (image placeholder) */
+	--alumnus-bg-event-placeholder-end: #dfe4ea;       /* Used in: events (image placeholder) */
+	--alumnus-bg-event-media: #0d2230;      /* Used in: events (media background) */
+	
+	/* ============================================
+	   BORDER & DIVIDER COLORS
+	   ============================================ */
+	
+	--alumnus-border-light: #e1e4e8;        /* Used in: community-feed (card borders) */
+	--alumnus-border-medium: #e2e8f0;       /* Used in: directory (card borders), profile (sections) */
+	--alumnus-border-gray: #d1d9e0;         /* Used in: community-feed (composer input) */
+	--alumnus-border-select: #cbd5e0;       /* Used in: directory (select borders), profile (empty state) */
+	--alumnus-border-pale: #dbe2e8;         /* Used in: community-feed (members card) */
+	--alumnus-border-divider: #e5e9ec;      /* Used in: community-feed (post actions) */
+	--alumnus-border-list: #f0f2f4;         /* Used in: community-feed (member list items) */
+	
+	/* Modal borders */
+	--alumnus-modal-border: #E2E8F0;        /* Used in: login (modal close button bg) */
+	--alumnus-modal-border-dark: #CBD5E0;   /* Used in: login (modal close hover) */
+	
+	/* ============================================
+	   STATUS COLORS
+	   ============================================ */
+	
+	/* Success */
+	--alumnus-success-text: green;          /* Used in: success messages */
+	
+	/* Error */
+	--alumnus-error-bg: #FEE2E2;            /* Used in: login (error message bg) */
+	--alumnus-error-border: #FCA5A5;        /* Used in: login (error message border) */
+	--alumnus-error-text: #991B1B;          /* Used in: login (error text), profile (error state), PHP error messages */
+	
+	/* Badge Colors */
+	--alumnus-badge-default: #9CA3AF;       /* Used in: events (default badge) */
+	
+	/* ============================================
+	   AVATAR & PROFILE COLORS
+	   ============================================ */
+	
+	--alumnus-avatar-gradient-start: #a8d5e2;  /* Used in: profile (avatar background) */
+	--alumnus-avatar-gradient-end: #78b5c5;    /* Used in: profile (avatar background) */
+	
+	/* ============================================
+	   SPECIAL EFFECT COLORS
+	   ============================================ */
+	
+	/* Light text on dark backgrounds */
+	--alumnus-text-on-dark: #fff;           /* Used in: dark cards, buttons */
+	
+	/* Scrollbar colors */
+	--alumnus-scrollbar-thumb: #c5d1da;     /* Used in: community-feed (scrollbar) */
+	
+	/* Icon colors */
+	--alumnus-icon-muted: #64748B;          /* Used in: login (modal close icon) */
+	--alumnus-icon-muted-hover: #1A202C;    /* Used in: login (modal close hover) */
+	
+	/* ============================================
+	   RGBA COLORS (Shadows & Overlays)
+	   ============================================ */
+	
+	/* These are kept as rgba for opacity control */
+	/* Shadows */
+	--alumnus-shadow-sm: rgba(0, 0, 0, 0.04);
+	--alumnus-shadow-md: rgba(0, 0, 0, 0.08);
+	--alumnus-shadow-lg: rgba(0, 0, 0, 0.12);
+	--alumnus-shadow-xl: rgba(0, 0, 0, 0.2);
+	--alumnus-shadow-hover: rgba(0, 0, 0, 0.25);
+	
+	/* Specific component shadows */
+	--alumnus-shadow-card: rgba(4, 50, 77, 0.2);
+	--alumnus-shadow-button-green: rgba(6, 179, 101, 0.18);
+	--alumnus-shadow-button-green-hover: rgba(6, 179, 101, 0.22);
+	--alumnus-shadow-button-login: rgba(10, 95, 127, 0.3);
+	--alumnus-shadow-button-login-hover: rgba(10, 95, 127, 0.4);
+	--alumnus-shadow-event-card: rgba(6, 22, 33, 0.3);
+	--alumnus-shadow-event-card-hover: rgba(6, 22, 33, 0.4);
+	--alumnus-shadow-profile-skill: rgba(15, 76, 117, 0.2);
+	--alumnus-shadow-profile-skill-hover: rgba(15, 76, 117, 0.3);
+	
+	/* Overlays */
+	--alumnus-overlay-dark: rgba(0, 0, 0, 0.6);
+	--alumnus-overlay-hero: rgba(4, 50, 77, 0.95);
+	--alumnus-overlay-hero-end: rgba(6, 66, 102, 0.9);
+	
+	/* White overlays */
+	--alumnus-overlay-white-border: rgba(255, 255, 255, 0.4);
+	--alumnus-overlay-white-light: rgba(255, 255, 255, 0.6);
+	--alumnus-overlay-white-medium: rgba(255, 255, 255, 0.15);
+	--alumnus-overlay-white-border-thick: rgba(255, 255, 255, 0.3);
+	--alumnus-overlay-white-hover: rgba(255, 255, 255, 0.25);
+	--alumnus-overlay-white-hover-strong: rgba(255, 255, 255, 0.5);
+	--alumnus-overlay-white-subtle: rgba(255, 255, 255, 0.02);
+	--alumnus-overlay-white-focus: rgba(255, 255, 255, 0.35);
+	
+	/* Focus rings */
+	--alumnus-focus-ring: rgba(4, 50, 77, 0.1);
+	--alumnus-focus-ring-strong: rgba(4, 50, 77, 0.15);
+	
+	/* Card borders with opacity */
+	--alumnus-card-border-top: rgba(255, 255, 255, 0.07);
+	--alumnus-card-gradient-border: rgba(255, 255, 255, 0);
+	
+	/* Event card border gradient */
+	--alumnus-event-border-gradient: rgba(255, 255, 255, 0.35);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Message classes for PHP usage */
+.alumnus-success-message {
+	color: var(--alumnus-success-text);
+	font-weight: bold;
+}
+
+.alumnus-error-message {
+	color: var(--alumnus-error-text);
+	font-weight: bold;
+}
+
+/* Admin utility classes */
+.alumnus-admin-hr {
+	margin: 30px 0;
+}
+
+.alumnus-admin-list {
+	line-height: 1.8;
+}
+
+/* Hidden input helper */
+.alumnus-hidden {
+	display: none;
+}
+
+/* Admin color picker styling */
+.alumnus-color-picker-wrapper {
+	position: relative;
+}
+
+.alumnus-colorpicker-popup {
+	position: absolute;
+	background: var(--alumnus-bg-white);
+	z-index: 99;
+	border-radius: 100%;
+}
+

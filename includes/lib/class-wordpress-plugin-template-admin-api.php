@@ -173,9 +173,9 @@ class WordPress_Plugin_Template_Admin_API {
 
 			case 'color':
 				//phpcs:disable
-				?><div class="color-picker" style="position:relative;">
+				?><div class="color-picker alumnus-color-picker-wrapper">
 					<input type="text" name="<?php esc_attr_e( $option_name ); ?>" class="color" value="<?php esc_attr_e( $data ); ?>" />
-					<div style="position:absolute;background:#FFF;z-index:99;border-radius:100%;" class="colorpicker"></div>
+					<div class="colorpicker alumnus-colorpicker-popup"></div>
 				</div>
 				<?php
 				//phpcs:enable

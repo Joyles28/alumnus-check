@@ -128,10 +128,21 @@ function alumnus_event_list_shortcode( $atts ) {
 		'show_past'      => 'true',
 	), $atts, 'alumnus_event_list' );
 
+	// Ensure color-variables.css is loaded
+	if ( ! wp_style_is( 'wordpress-plugin-template-colors', 'registered' ) ) {
+		wp_register_style(
+			'wordpress-plugin-template-colors',
+			plugin_dir_url( __FILE__ ) . 'assets/css/color-variables.css',
+			array(),
+			'1.0.0'
+		);
+	}
+	wp_enqueue_style( 'wordpress-plugin-template-colors' );
+
 	// Enqueue CSS.
-	wp_enqueue_style( 'alumnus-event-list', plugin_dir_url( __FILE__ ) . 'assets/css/event-list.css', array(), '1.0.0' );
+	wp_enqueue_style( 'alumnus-event-list', plugin_dir_url( __FILE__ ) . 'assets/css/event-list.css', array( 'wordpress-plugin-template-colors' ), '1.0.0' );
 	// Reuse badges styling from event info CSS (ensures consistent badge styles if that file not yet loaded elsewhere).
-	wp_enqueue_style( 'alumnus-event-info', plugin_dir_url( __FILE__ ) . 'assets/css/event-information.css', array(), '1.0.0' );
+	wp_enqueue_style( 'alumnus-event-info', plugin_dir_url( __FILE__ ) . 'assets/css/event-information.css', array( 'wordpress-plugin-template-colors' ), '1.0.0' );
 
 	$query_args = alumnus_event_list_build_query_args( $atts );
 	$events     = new WP_Query( $query_args );
